@@ -1,7 +1,7 @@
 const db = require("../models"); // models path 
 const Message = db.messages;
 
-// POST/Create Message
+// POST/Create a Message
 exports.createMessage = (req, res, next) => {
 	console.log("createMessage");
 
