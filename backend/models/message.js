@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     
     static associate (model) {
       message.belongsTo(model.User, { foreignKey: 'userId' })
-      message.hasMany(model.Comment)
-      message.hasMany(model.Likes)
+      message.hasMany(model.Comment, { onDelete: 'cascade' })
+      message.hasMany(model.Likes, { onDelete: 'cascade' })
     }
 
     readableCreatedAt () {
@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   message.init(
     {
       userId: DataTypes.INTEGER,
+      title: DataTypes.STRING,
       content: DataTypes.TEXT,
       imageUrl: DataTypes.STRING,
       likesCount: DataTypes.INTEGER
