@@ -3,7 +3,8 @@ const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize("groupomania", "root",'Ab@202112', {
     dialect: "mysql",
-    host: "localhost"
+    host: "localhost",
+    port: 3000
 });
 try {
     sequelize.authenticate();
