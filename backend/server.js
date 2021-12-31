@@ -1,6 +1,6 @@
 
 // On utilise la fonctionne require pour importer des requets http
-/*const http = require('http');
+const http = require('http');
 // importer l'appli express que nous avons exporter dans app.js
 const express = require("express");
 const app = express();
@@ -50,11 +50,11 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
-server.listen(port);*/
+server.listen(port);
 
 
 
-const express = require("express");
+/*const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
@@ -81,5 +81,5 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
-});
+});*/
  

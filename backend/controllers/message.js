@@ -1,7 +1,7 @@
 const db = require("../models"); // models path 
 const Message = db.message;
 
-// POST/Create a Message
+// POST/Create un message
 exports.createMessage = (req, res, next) => {
 	console.log("createMessage");
 
@@ -24,7 +24,7 @@ exports.createMessage = (req, res, next) => {
 		.catch((error) => res.status(400).json({ error }));
 };
 
-// GET all messages
+// GET all messages - tous les messages
 exports.getAllMessages = (req, res, next) => {
 	console.log("getAllMessages");
 
@@ -42,7 +42,7 @@ exports.getAllMessages = (req, res, next) => {
 		.catch((error) => res.status(400).json({ error }));
 };
 
-// GET a single message
+// GET un seule message
 exports.getMessage = (req, res, next) => {
 	console.log("getMessage");
 
@@ -53,7 +53,7 @@ exports.getMessage = (req, res, next) => {
 		.catch((error) => res.status(404).json({ error }));
 };
 
-// GET all messages for one user
+// GET all messages pour un user
 exports.getAllMessagesForOne = (req, res, next) => {
 	console.log("getAllMessagesForOne");
 
@@ -64,7 +64,7 @@ exports.getAllMessagesForOne = (req, res, next) => {
 		.catch((error) => res.status(404).json({ error }));
 };
 
-// DELete a message
+// Supprimer le message
 exports.deleteMessage = (req, res, next) => {
 	console.log("deleteMessage");
 
