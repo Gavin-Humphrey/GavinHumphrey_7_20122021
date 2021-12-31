@@ -1,5 +1,5 @@
 const db = require("../models"); // models path 
-const Comment = db.comments;
+const Comment = db.comment;
 
 // POST/Create a Comment
 exports.createComment = (req, res, next) => {

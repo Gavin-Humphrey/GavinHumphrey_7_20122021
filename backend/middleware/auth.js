@@ -9,12 +9,12 @@ module.exports = (req, res, next) => {
     nous devons split autour de l'espace, puis récupérer uniquement le deuxième élément.*/
     const token = req.headers.authorization.split(' ')[1];
     /* On décode le TOKEN, vérifie que la clé SECRET-TOKEN que on a créée,
-    pour la création de TOKEN, correspond à celle dans la fonction login  */
+    pour la création de TOKEN, correspond à celle dans la fonction login*/  
     const decodedToken = jwt.verify(token, process.env.SECRET_TOKEN); 
-    /* On récupère le userId, on vérifie s'il y a un userId avec la requête et qu'il correspond à celui 
-    du TOKEN. Et s'il y a un userId dans le corps de la requête et qu'il est différent, il renvoie une erreur */
+    // On récupère le userId, on vérifie s'il y a un userId avec la requête et qu'il correspond à celui 
+    //du TOKEN. Et s'il y a un userId dans le corps de la requête et qu'il est différent, il renvoie une erreur */
     const userId = decodedToken.userId;
-    if (req.body.userId && req.body.userId !== userId) { //
+    if (req.body.userId && req.body.userId !== userId) { 
       throw 'Invalid user ID';
     } else {
       next();

@@ -1,5 +1,5 @@
 const db = require("../config_db");
-const Like = db.likes;
+const Like = db.like;
 
 // logique métier : lire tous les likes
 exports.findAllLikes = (req, res, next) => {

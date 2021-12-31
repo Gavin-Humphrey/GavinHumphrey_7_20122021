@@ -3,7 +3,6 @@
 
 const { Model } = require('sequelize')
 
-const moment = require('moment')
 
 const { deleteFile } = require('../services/file-removal')
 const comment = require('./comment')
@@ -11,10 +10,10 @@ const comment = require('./comment')
 module.exports = (sequelize, DataTypes) => {
   class message extends Model {
     
-    static associate (model) {
-      message.belongsTo(model.User, { foreignKey: 'userId' })
-      message.hasMany(model.Comment, { onDelete: 'cascade' })
-      message.hasMany(model.Likes, { onDelete: 'cascade' })
+    static associate (models) {
+      message.belongsTo(models.User, { foreignKey: 'userId' })
+      message.hasMany(models.Comment, { onDelete: 'cascade' })
+      message.hasMany(models.Likes, { onDelete: 'cascade' })
     }
 
     readableCreatedAt () {

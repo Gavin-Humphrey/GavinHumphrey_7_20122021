@@ -11,14 +11,15 @@ try {
 } catch (error) {
     console.error('Impossible de se connecter, erreur suivante :', error);
 }
-
 const db = {};
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.user = require('./models/user.js')(sequelize, Sequelize);
-db.messages = require('./models/message.js')(sequelize, Sequelize);
-db.likes = require('./models/like.js')(sequelize, Sequelize);
-db.comments = require('./models/comment.js')(sequelize, Sequelize);
+dataBase.sequelize.sync();   // Synchronisation de la base de données grâce à Sequelize
+
+db.user = require('./models/user.js.js')(sequelize, Sequelize);
+db.messages = require('./models/message.js.js')(sequelize, Sequelize);
+db.likes = require('./models/like.js.js')(sequelize, Sequelize);
+db.comments = require('./models/comment.js.js')(sequelize, Sequelize);
 
 module.exports = db;

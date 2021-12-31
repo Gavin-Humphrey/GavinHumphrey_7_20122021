@@ -1,5 +1,5 @@
 const db = require("../models"); // models path 
-const Message = db.messages;
+const Message = db.message;
 
 // POST/Create a Message
 exports.createMessage = (req, res, next) => {
