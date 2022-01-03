@@ -1,29 +1,33 @@
+// Importation de multer
 const multer = require('multer');
+const helpers = require('../helpers');
 
+// --------------------- MIDDLEWARES ---------------------- //
+
+// Déclaration d'une constante pour générer une extension de fichier (jpg ou png)
 const MIME_TYPES = {
-//création d'une bibliothèque de type de fichier avec correspondance
-'image/jpeg': 'jpeg',
-'image/jpg': 'jpg',
-'image/png': 'png',
+  'image/jpg': 'jpg',
+  'image/jpeg': 'jpg',
+  'image/png': 'png',
 };
 
+// Objet de configuration de multer
+// Permet l'enregistrement sur le disque
 const storage = multer.diskStorage({
-//permet de definir l'emplacement destination du fichier
-destination: (req, file, callback) => {
-//section où on dit où mettre
-callback(null, 'images'); //null dit pas d'erreur + nom du dossier destination
-},
-filename: (req, file, callback) => {
-//section où on va donner un nom
-/*On récup le nom du fichier utilisateur puis on supprime les espaces 
-avec split qui va faire un tableau puis join va concatener le tout*/
-const name = file.originalname.split(' ').join('_'); 
-//recup de l'extension du fichier grace au mime_type
-const extension = MIME_TYPES[file.mimetype]; 
-//creation du nom avec date/heure pour le rendre unique
-callback(null, name + Date.now() + '.' + extension); 
-},
+  // Dans quel dossier on enregistre l'image
+  destination: (req, file, callback) => {
+    console.log(file);
+    callback(null, 'images');
+  },
+  // le nom de l'image
+  filename: (req, file, callback) => {
+    const name = file.originalname.split(' ').join('_');
+    const extension = MIME_TYPES[file.mimetype];
+    callback(null, name + Date.now() + '.' + extension);
+  },
 });
-/*export du middleware avec recup de la constante + single pour dire 1 fichier 
-en upload uniquement + "image" pour dire uniquement des images*/
-module.exports = multer({ storage: storage }).single('image'); 
+
+// --------------------- EXPORTATIONS ---------------------- //
+
+// Exportation du middleware complètement configuré
+module.exports = multer({ storage: storage, fileFilter: helpers.imageFilter }).single('imageUrl');
