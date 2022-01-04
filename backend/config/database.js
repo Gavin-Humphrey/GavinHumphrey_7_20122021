@@ -1,4 +1,3 @@
-const { NODE_ENV } = require('../config');
 const config = require('../config');
 
 module.exports = {

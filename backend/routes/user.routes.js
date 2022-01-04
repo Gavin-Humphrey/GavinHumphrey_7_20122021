@@ -35,4 +35,3 @@ router.post('/messages/:id/like', auth, likeCtrl.likeOneMessage);
 router.get('/messages/:id/likes', auth, likeCtrl.findAllLikesOfOneMessage);
 
 module.exports = router;
-

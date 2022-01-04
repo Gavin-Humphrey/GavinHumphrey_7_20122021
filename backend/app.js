@@ -30,12 +30,3 @@ app.use('/api/', userRoutes);
 db.sequelize.sync();
 
 module.exports = app;
-
-
-
-
-
-
-
-
-
