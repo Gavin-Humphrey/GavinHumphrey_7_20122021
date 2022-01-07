@@ -33,8 +33,8 @@ export default {
 
 <style>
 nav {
-  background-color:#223553;
-  border-bottom: 4px solid #D1515A;
+  background-color:#532222;
+  border-bottom: 4px solid #d1515a;
 }
 .navbar-expand .navbar-nav .nav-link {
     color:white;
