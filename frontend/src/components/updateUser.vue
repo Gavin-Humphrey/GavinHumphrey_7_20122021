@@ -37,7 +37,7 @@ export default {
     methods: {
         updateUsername () {
             let id = localStorage.getItem("userId");
-            axios.put(`http://localhost:3306/api/user/${id}`, {
+            axios.put(`http://localhost:3000/api/user/${id}`, {
                 username:this.username
             } , {
         headers: {

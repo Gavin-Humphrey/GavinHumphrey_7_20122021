@@ -50,7 +50,7 @@ export default {
   },
   mounted () {
       axios
-      .get("http://localhost:3306/api/messages",  {
+      .get("http://localhost:3000/api/messages",  {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token")
         }
