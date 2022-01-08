@@ -116,8 +116,8 @@ function validFileType(file) {
 
 <style>
 #addMessage {
-    width: 40px;
-    position:fixed;
+  width: 40px;
+  position:fixed;
 	height:60px;
 	bottom:40px;
 	right:40px;

@@ -65,12 +65,14 @@ export default {
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid slategrey;
-    margin: 0 10%;
-    background-color: white;
-    box-shadow: #949aa0 1px 1px 1px;
+    margin: 0 20%;
+    background-color: #f3f6f4;
+    box-shadow: #949aa0 4px 4px 4px;
 }
 #addComment {
     border-radius: 25px;
     border: 1.5px solid;
+    background-color: #7c3838;
+    color: white;
 }
 </style>

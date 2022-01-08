@@ -42,7 +42,10 @@ export default {
 
 <style>
 #delete_user {
-    border-radius: 25px;
+    background-color: #3d0f0f;
     border: 1.5px solid;
+}
+#delete_user:hover {
+    background-color: #7c3838;
 }
 </style>

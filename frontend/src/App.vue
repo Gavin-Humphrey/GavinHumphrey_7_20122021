@@ -33,11 +33,12 @@ export default {
 
 <style>
 nav {
-  background-color:#532222;
-  border-bottom: 4px solid #d1515a;
+  background-color:#f3f6f4;
+  height: 100px;
+  box-shadow: #949aa0 4px 4px 4px;
 }
 .navbar-expand .navbar-nav .nav-link {
-    color:white;
+    color:#7c3838;
     font-size:1.2rem;
 }
 .nav-item p {

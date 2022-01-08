@@ -148,7 +148,7 @@ textarea {
   margin: 0 3% 0 3%;
 }
 .comment_box {
-  margin: 15px 10% 15px;
+  margin: 5px 20% 5px;
   background-color:white;
   box-shadow: #949aa0 1px 1px 1px;
 }
@@ -170,7 +170,12 @@ textarea {
 }
 #update_comment {
     border-radius: 25px;
-    border: 1.5px solid;
+    border: 2px solid;
+    color: #7c3838;
+}
+#update_comment:hover {
+  background-color: #3d0f0f;
+  color: white;
 }
 .show_btn {
     display: flex;
@@ -192,7 +197,7 @@ textarea {
 .UserName_et_date p {
     font-weight: bold;
     font-size: 18px;
-    color: dodgerblue;
+    color: #7c3838;
 }
 .le_commentaire {
     display: flex;
@@ -204,6 +209,6 @@ textarea {
 .le_commentaire p {
   overflow-wrap: break-word;
     word-break: break-all;
-    color:black;
+    color:#7c3838;
 }
 </style>

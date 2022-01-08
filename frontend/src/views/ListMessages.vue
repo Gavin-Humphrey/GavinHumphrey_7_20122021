@@ -89,9 +89,9 @@ a:hover {
   text-decoration-line: none;
 } 
 #myMessage {
-  margin: 15px 10% 15px;
-  background-color:white;
-  box-shadow: #949aa0 1px 1px 1px;
+  margin: 25px 20% 25px;
+  background-color:#f3f6f4;
+  box-shadow: #949aa0 4px 4px 4px;
 }
 .UserName_et_data {
     display: flex;
@@ -102,8 +102,11 @@ a:hover {
 }
 .UserName_et_data p {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
+    color: #7c3838;
 }
+
+
 .le_message {
     display: flex;
     justify-content: center;
@@ -114,7 +117,7 @@ a:hover {
     overflow-wrap: break-word;
     word-break: break-word;
     text-align:center;
-    color:black;
+    color:#7c3838;
 }
 .myImage {
     display: flex;
@@ -126,6 +129,6 @@ a:hover {
     margin-left: 10%;
     width: 80%;
     padding-bottom: 50px;
-    max-width:240px;
+    max-width:250px;
 }
 </style>

@@ -101,10 +101,13 @@ img {
     font-size: 14px;
     margin-top: 5px;
     margin-left: 3%;
-    color: dodgerblue;
+    color: #7c3838;
 }
 button {
-    border-radius: 25px;
-    border: 1.5px solid;
+  background-color: #7c3838;
+  border: 1.5px solid;
+}
+button:hover {
+  background-color: #3d0f0f;
 }
 </style>

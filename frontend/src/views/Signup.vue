@@ -115,11 +115,12 @@ img {
 }
 button {
   margin-top:22px;
+  background-color: #7c3838;
 }
 span {
   cursor:pointer;
   text-decoration:underline;
-  color:red;
+  color:#7c3838;
 }
 span:hover {
   color:blue;

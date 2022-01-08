@@ -219,16 +219,20 @@ export default {
 #delete_message {
     border-radius: 25px;
     border: 1.5px solid;
+    background-color: #3d0f0f;
+}
+#delete_message:hover {
+  background-color: #7c3838;
 }
 #myBoxMessage {
-  margin: 15px 10% 0px;
-  background-color:white;
-  box-shadow: #949aa0 1px 1px 1px;
+  margin: 15px 20% 0px;
+  background-color:#f3f6f4;
+  box-shadow: #949aa0 4px 4px 4px;
 }
 .my_comment {
-  margin: 0px 10% 0px;
-  background-color:white;
-  box-shadow: #949aa0 1px 1px 1px;
+  margin: 5px 20% 5px;
+  background-color:#f3f6f4;
+  box-shadow: #949aa0 4px 4px 4px;
   border-bottom: 1px solid slategrey;
 }
 .UserName_et_date {
@@ -240,8 +244,8 @@ export default {
 }
 .UserName_et_date p {
     font-weight: bold;
-    font-size: 14px;
-    color: dodgerblue;
+    font-size: 16px;
+    color: #7c3838;
 }
 .le_message, .le_commentaire {
     display: flex;
@@ -253,7 +257,7 @@ export default {
 .le_message p, .le_commentaire p {
     overflow-wrap: break-word;
     word-break: break-all;
-    color:black;
+    color:#7c3838;
     text-align: center;
     padding-bottom:14px;
 }

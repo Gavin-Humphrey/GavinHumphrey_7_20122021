@@ -60,7 +60,10 @@ export default {
 
 <style>
 #update_user {
-    border-radius: 25px;
     border: 1.5px solid;
+    background-color: #7c3838;
+}
+#update_user:hover {
+  background-color: #3d0f0f;
 }
 </style>
