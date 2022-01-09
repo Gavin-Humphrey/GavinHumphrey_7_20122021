@@ -1,8 +1,8 @@
 <template>
 <div>
 <div class="lien_user">
-<router-link to="users" v-if="myId==='1'"><img src="../assets/users.svg"/></router-link>
-<router-link to="User" v-else><img src="../assets/user-svgrepo-com.svg"/></router-link>
+<router-link to="users" v-if="myId==='1'"><img src="../assets/users.png"/></router-link>
+<router-link to="User" v-else><img src="../assets/user.png"/></router-link>
 </div>
 <div class="create_message">
 <createMessage/>
@@ -38,30 +38,30 @@ export default {
   },
   data() {
       return {
-              id: "",
-              content: "",
-              imageUrl: "",
-              allMessages: [],
-              myId: localStorage.getItem("userId")
-      };
+      id: "",
+      content: "",
+      imageUrl: "",
+      allMessages: [],
+      myId: localStorage.getItem("userId")
+    };
   },
   beforeCreate () {
     document.querySelector('body').setAttribute('style', 'background:#dee1e5')
   },
   mounted () {
-      axios
-      .get("http://localhost:3000/api/messages",  {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token")
-        }
-      })
-      .then((response) => {
-          this.allMessages = response.data;
-          console.log(this.allMessages);
-      })
-      .catch((error) => {
-          console.log(error)
-      });
+    axios
+    .get("http://localhost:3000/api/messages",  {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token")
+      }
+    })
+    .then((response) => {
+        this.allMessages = response.data;
+        console.log(this.allMessages);
+    })
+    .catch((error) => {
+        console.log(error)
+    });
   },
   beforeUnmount () {
     document.querySelector('body').setAttribute('style', '')
@@ -72,13 +72,13 @@ export default {
 
 <style scoped>
 .lien_user {
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
 .lien_user img {
-    width:30px;
-    padding-bottom: 15px;
+  width:60px;
+  padding-bottom: 15px;
 }
 a {  
   text-decoration: none;
@@ -105,7 +105,6 @@ a:hover {
     font-size: 16px;
     color: #7c3838;
 }
-
 
 .le_message {
     display: flex;

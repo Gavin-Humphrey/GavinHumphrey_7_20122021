@@ -1,5 +1,5 @@
 <template>
-<img id="addMessage" type="button" data-toggle="modal" data-target="#exampleModal" src="../assets/plus.svg"/>
+<img id="addMessage" type="button" data-toggle="modal" data-target="#exampleModal" src="../assets/plus.png"/>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

@@ -70,9 +70,12 @@ export default {
     box-shadow: #949aa0 4px 4px 4px;
 }
 #addComment {
-    border-radius: 25px;
+    border-radius: 10px;
     border: 1.5px solid;
     background-color: #7c3838;
     color: white;
+}
+#addComment:hover {
+  background-color: #3d0f0f;
 }
 </style>

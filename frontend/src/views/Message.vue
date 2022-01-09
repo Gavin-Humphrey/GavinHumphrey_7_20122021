@@ -1,8 +1,8 @@
 <template>
 <div class="lien_user">
-<router-link to="/users" v-if="myId==='1'"><img src="../assets/users.svg"/></router-link>
-<router-link to="/User" v-else><img src="../assets/user-svgrepo-com.svg"/></router-link>
-<router-link to="/messages"><img src="../assets/home.svg"/></router-link>
+<router-link to="/users" v-if="myId==='1'"><img src="../assets/users.png"/></router-link>
+<router-link to="/User" v-else><img src="../assets/user.png"/></router-link>
+<router-link to="/messages"><img src="../assets/home.png"/></router-link>
 </div>
 <div class="user" v-if="myId==='1'">
 <button type="button" class="btn btn-primary" @click="deleteUserByAdmin(message.userId)">Supprimer le compte</button>
@@ -23,7 +23,7 @@
 </div>
 <div class="like_et_comments">
 <div>
-<img class="img_comment" src="../assets/comment.svg"/><p>{{this.comments.length}}</p>
+<img class="img_comment" src="../assets/comment.png"/><p>{{this.comments.length}}</p>
 </div>
 <div>
 <like/><p>{{likes}}</p>
@@ -38,7 +38,7 @@
 <div class="le_commentaire">
 <p>{{comment.content}}</p>
 <div v-if="myId==='1'" class="delete_img" >
-<img type="button" src="../assets/delete.svg" @click="deleteCommentByAdmin(comment.id)" />
+<img type="button" src="../assets/delete.png" @click="deleteCommentByAdmin(comment.id)" />
 </div>
 </div>
 </div>
@@ -197,29 +197,33 @@ export default {
   
 }
 .user button {
-    border-radius: 25px;
-    border: 1.5px solid;
+  border-radius: 10px;
+  border: 1.5px solid;
+  background-color: #7c3838; 
+}
+.user button:hover {
+  background-color: #3d0f0f;
 }
 .lien_user {
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
 }
 .lien_user img {
-    width:30px;
-    padding-bottom: 15px;
+  width:60px;
+  padding-bottom: 15px;
 }
 .delete_if_exist {
-    display: flex;
-    justify-content: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
     
 }
 #delete_message {
-    border-radius: 25px;
-    border: 1.5px solid;
-    background-color: #3d0f0f;
+  border-radius: 10px;
+  border: 1.5px solid;
+  background-color: #3d0f0f;
 }
 #delete_message:hover {
   background-color: #7c3838;
@@ -236,36 +240,36 @@ export default {
   border-bottom: 1px solid slategrey;
 }
 .UserName_et_date {
-    display: flex;
-    margin-left: 3%;
-    padding-top: 10px;
-    justify-content: space-between;
-    margin-right: 3%;
+  display: flex;
+  margin-left: 3%;
+  padding-top: 10px;
+  justify-content: space-between;
+  margin-right: 3%;
 }
 .UserName_et_date p {
-    font-weight: bold;
-    font-size: 16px;
-    color: #7c3838;
+  font-weight: bold;
+  font-size: 16px;
+  color: #7c3838;
 }
 .le_message, .le_commentaire {
-    display: flex;
-    justify-content: center;
-    margin-left: 3%;
-    margin-right: 2%;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  margin-left: 3%;
+  margin-right: 2%;
+  flex-direction: column;
 }
 .le_message p, .le_commentaire p {
-    overflow-wrap: break-word;
-    word-break: break-all;
-    color:#7c3838;
-    text-align: center;
-    padding-bottom:14px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  color:#7c3838;
+  text-align: center;
+  padding-bottom:14px;
 }
 .image img {
-    width: 80%;
-    margin-left: 10%;
-    object-fit: contain;
-    max-height: 230px
+  width: 80%;
+  margin-left: 10%;
+  object-fit: contain;
+  max-height: 230px
 }
 .img_comment {
   width:26px;
@@ -284,9 +288,9 @@ export default {
   margin: 0 0 0 9px;
 }
 .delete_img img {
-    padding-bottom: 20px;
-    width: 30px;
-    float: right;
-    margin-right: 3%;
+  padding-bottom: 20px;
+  width: 30px;
+  float: right;
+  margin-right: 3%;
 }
 </style>

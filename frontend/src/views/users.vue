@@ -1,6 +1,6 @@
 <template>
 <div class="link_user">
-<router-link to="/messages"><img src="../assets/home.svg"/></router-link>
+<router-link to="/messages"><img src="../assets/home.png"/></router-link>
 </div>
 <div id="myUser" v-for="data in Users" v-bind:key="data.id">
 <p>{{ data.username }}</p>
@@ -106,6 +106,7 @@ img {
 button {
   background-color: #7c3838;
   border: 1.5px solid;
+  border-radius: 10px;
 }
 button:hover {
   background-color: #3d0f0f;

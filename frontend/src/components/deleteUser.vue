@@ -44,6 +44,7 @@ export default {
 #delete_user {
     background-color: #3d0f0f;
     border: 1.5px solid;
+    border-radius: 10px;
 }
 #delete_user:hover {
     background-color: #7c3838;

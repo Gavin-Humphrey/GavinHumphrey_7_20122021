@@ -1,6 +1,6 @@
 <template>
 <div class="link_user">
-<router-link to="/messages"><img src="../assets/home.svg"/></router-link>
+<router-link to="/messages"><img src="../assets/home.png"/></router-link>
 </div>
 <div class="user" v-if="myId!=='1'">
 <deleteUser/>
@@ -13,7 +13,7 @@
 <div v-if="comment.userId==myId">
 <div class="UserName_et_date">
 <p>{{comment.user.username}}</p>
-<img src="../assets/delete.svg" @click="deleteComments(comment.id)" class="btn_delete"/>
+<img src="../assets/delete.png" @click="deleteComments(comment.id)" class="btn_delete"/>
 </div>
 <div class="le_commentaire">
 <p>{{comment.content}}</p>
@@ -158,57 +158,57 @@ textarea {
   padding-top:15px;
 }
 .div_btn_update {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 14px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 14px;
 }
 .user {
-    display: flex;
-    justify-content: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 #update_comment {
-    border-radius: 25px;
-    border: 2px solid;
-    color: #7c3838;
+  border-radius: 10px;
+  border: 2px solid;
+  color: #7c3838;
 }
 #update_comment:hover {
   background-color: #3d0f0f;
   color: white;
 }
 .show_btn {
-    display: flex;
-    padding-top: 11px;
-    flex-direction: column-reverse;
+  display: flex;
+  padding-top: 11px;
+  flex-direction: column-reverse;
 }
 .link_user {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0 20px 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 20px 0;
 }
 .UserName_et_date {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 3%;
-    margin-right: 3%;
-    padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding-top: 10px;
 }
 .UserName_et_date p {
-    font-weight: bold;
-    font-size: 18px;
-    color: #7c3838;
+  font-weight: bold;
+  font-size: 18px;
+  color: #7c3838;
 }
 .le_commentaire {
-    display: flex;
-    justify-content: center;
-    margin-left: 3%;
-    margin-right: 2%;
-    padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  margin-left: 3%;
+  margin-right: 2%;
+  padding-bottom: 10px;
 }
 .le_commentaire p {
   overflow-wrap: break-word;
-    word-break: break-all;
-    color:#7c3838;
+  word-break: break-all;
+  color:#7c3838;
 }
 </style>

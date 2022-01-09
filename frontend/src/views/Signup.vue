@@ -117,6 +117,9 @@ button {
   margin-top:22px;
   background-color: #7c3838;
 }
+button:hover {
+  background-color: #3d0f0f;
+}
 span {
   cursor:pointer;
   text-decoration:underline;
