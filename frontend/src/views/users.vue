@@ -2,6 +2,7 @@
 <div class="link_user">
 <router-link to="/messages"><img src="../assets/home.png"/></router-link>
 </div>
+<p class="admin">Admin</p>
 <div id="myUser" v-for="data in Users" v-bind:key="data.id">
 <p>{{ data.username }}</p>
 <div>
@@ -111,4 +112,9 @@ button {
 button:hover {
   background-color: #3d0f0f;
 }
+.admin {
+   display: flex;
+  justify-content: center;
+}
+
 </style>

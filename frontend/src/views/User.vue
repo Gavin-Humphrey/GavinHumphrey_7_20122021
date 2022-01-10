@@ -2,6 +2,7 @@
 <div class="link_user">
 <router-link to="/messages"><img src="../assets/home.png"/></router-link>
 </div>
+<p>User</p>
 <div class="user" v-if="myId!=='1'">
 <deleteUser/>
 </div>
@@ -211,4 +212,9 @@ textarea {
   word-break: break-all;
   color:#7c3838;
 }
+p {
+  display: flex;
+  justify-content: center;
+}
+
 </style>

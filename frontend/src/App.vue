@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand navbar">
   <div class="navbar-nav mr-auto">
         <li class="nav-item">
-    <router-link to="/" class="nav-link">Home</router-link>
+    <router-link to="/" class="nav-link"><img src="./assets/icon.png"/></router-link>
     </li>
         <li class="nav-item">
     <p class="nav-link" @click="logout" type="button">Logout</p>
@@ -43,5 +43,9 @@ nav {
 }
 .nav-item p {
   margin:0;
+}
+img {
+  width: 50px;
+  margin-top: -10px;
 }
 </style>
