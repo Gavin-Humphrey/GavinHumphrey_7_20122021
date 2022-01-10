@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const userCtrl = require('../controllers/user.controller');
-const messageCtrl = require('../controllers/message.controller');
-const commentCtrl = require('../controllers/comment.controller');
-const likeCtrl = require('../controllers/like.controller');
+const userCtrl = require('../controllers/userCtrl');
+const messageCtrl = require('../controllers/messageCtrl');
+const commentCtrl = require('../controllers/commentCtrl');
+const likeCtrl = require('../controllers/likeCtrl');
 const auth = require('../middleware/auth');
 const multer = require('../middleware/multer-config');
 

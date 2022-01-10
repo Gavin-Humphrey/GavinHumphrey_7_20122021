@@ -11,10 +11,10 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.users = require("./user.models")(sequelize, Sequelize);
-db.messages = require("./message.models")(sequelize, Sequelize);
-db.comments = require("./comment.models")(sequelize, Sequelize);
-db.likes = require("./like.models")(sequelize,Sequelize);
+db.users = require("./userModels")(sequelize, Sequelize);
+db.messages = require("./messageModels")(sequelize, Sequelize);
+db.comments = require("./commentModels")(sequelize, Sequelize);
+db.likes = require("./likeModels")(sequelize,Sequelize);
 
 db.users.hasMany(db.messages);
 db.users.hasMany(db.comments);
