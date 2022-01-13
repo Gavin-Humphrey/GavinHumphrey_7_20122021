@@ -7,6 +7,11 @@
 <div class="user" v-if="myId==='1'">
 <button type="button" class="btn btn-primary" @click="deleteUserByAdmin(message.userId)">Supprimer le compte</button>
 </div>
+          <!--Modify message-->
+<div v-if="message.userId==myId || myId==='1'" class="update_if_exist">
+<button @click="updateMyMessages" type="button" class="btn btn-info" id="update_message">Modifier message</button>
+</div>
+
 <div v-if="message.userId==myId || myId==='1'" class="delete_if_exist">
 <button @click="deleteMessages" type="button" class="btn btn-info" id="delete_message">Supprimer message</button>
 </div>
@@ -50,6 +55,7 @@ import comments from "../components/comments"
 import like from "../components/like"
 import router from '../router/index'
 
+//import createNewMessage from "../components/createMessage"
 
 export default {
     name:"getMessageById",
@@ -107,6 +113,7 @@ export default {
       .catch((error) => {
           console.log(error)
       });
+
   }
     axios
       .get(`http://localhost:3000/api/messages/${this.$route.params.id}/comments`,  {
@@ -127,64 +134,90 @@ export default {
     document.querySelector('body').setAttribute('style', '');
     document.getElementById('app').setAttribute('style', '');
   },
+
     methods: {
-      deleteMessages() {  
-        var r = confirm("Êtes-vous sûr de vouloir supprimer ce message ?");
-  if (r == true) {
-      axios
-      .delete(`http://localhost:3000/api/messages/${this.$route.params.id}`,  {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token")
+          deleteMessages() {  
+            var r = confirm("Êtes-vous sûr de vouloir supprimer ce message ?");
+      if (r == true) {
+          axios
+          .delete(`http://localhost:3000/api/messages/${this.$route.params.id}`,  {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          })
+          .then((response) => {
+              console.log(response + "Message supprimé");     
+          })
+          .catch((error) => {
+              console.log(error)
+          });
+          router.push({ name: 'ListMessages' })
         }
-      })
-      .then((response) => {
-          console.log(response + "Message supprimé");     
-      })
-      .catch((error) => {
-          console.log(error)
-      });
-      router.push({ name: 'ListMessages' })
-    }
-    },
-    deleteUserByAdmin(e) {
-               var confirmation = confirm("Êtes-vous sûr de vouloir supprimer le compte de l'auteur de ce message ?");
-  if (confirmation == true) {
+        },
+        deleteUserByAdmin(e) {
+            var confirmation = confirm("Êtes-vous sûr de vouloir supprimer le compte de l'auteur de ce message ?");
+      if (confirmation == true) {
             axios.delete(`http://localhost:3000/api/user/${e}`,  {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token")
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          })
+          .then((response) => {
+              console.log(response);
+          })
+          .catch((error) => {
+              console.log(error)
+          });
+          router.push({ name: 'ListMessages' })
+            
+      } 
+        },
+        deleteCommentByAdmin(e) {
+        var r = confirm("Êtes-vous sûr de vouloir supprimer ce commentaire ?");
+      if (r == true) {
+        axios
+          .delete(`http://localhost:3000/api/comments/${e}`,  {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          })
+          .then((response) => {
+              console.log(response + "Commentaire supprimé");
+              
+          })
+          .catch((error) => {
+              console.log(error)
+          });
+          location.reload();
+      }
         }
-      })
-      .then((response) => {
-          console.log(response);
-      })
-      .catch((error) => {
-          console.log(error)
-      });
-      router.push({ name: 'ListMessages' })
-        
-  } 
-    },
-    deleteCommentByAdmin(e) {
-    var r = confirm("Êtes-vous sûr de vouloir supprimer ce commentaire ?");
-  if (r == true) {
-     axios
-      .delete(`http://localhost:3000/api/comments/${e}`,  {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token")
-        }
-      })
-      .then((response) => {
-          console.log(response + "Commentaire supprimé");
-          
-      })
-      .catch((error) => {
-          console.log(error)
-      });
-      location.reload();
-  }
-    }
+        },    
+
+      //added
+      updateMyMessage (e) {
+          //let MessageId = localStorage.getItem("MessageId");
+        const formData = new FormData()
+            formData.append("content", this.content)
+            formData.append("imageUrl", this.imageUrl)
+            axios.put(`http://localhost:3000/api/creatMessage/${e}`, {
+              content:this.content
+            } , {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token")
+            }
+          })
+          .then((response) => {
+              console.log(response);
+          })
+          .catch((error) => {
+              console.log(error)
+          });
+          location.reload();
     }
 }
+//finish add
+
+
 </script>
 
 
@@ -233,6 +266,20 @@ export default {
   background-color:#f3f6f4;
   box-shadow: #949aa0 4px 4px 4px;
 }
+.update_if_exist {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#update_message {   /*start*/
+  border: 1.5px solid;
+  border-radius: 10px;
+  background-color: #704848;
+}
+#update_message:hover {
+  background-color: #922d2d;
+}                    /**stop */
 .my_comment {
   margin: 5px 20% 5px;
   background-color:#f3f6f4;

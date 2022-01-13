@@ -1,20 +1,20 @@
 <template>
 <div class="text-center">
 <form class="form-signup">
-        <img class="mb-4" src="../assets/above-font.png"/>
-        <h1 class="h3 mb-3 font-weight-normal" v-if="mode == 'create'">Créer un compte</h1>
-        <h1 class="h3 mb-3 font-weight-normal" v-else>Connectez-vous</h1> 
-        <p v-if="mode == 'login'">Tu n'as pas encore de compte ? <span @click="switchToCreateAccount()">Clique ici.</span></p>
-        <p v-else>Tu as déjà un compte ? <span @click="switchToLogin()">Clique ici.</span></p> 
-          <label for="inputEmail"></label>
-          <input type="email" v-model="email" id="inputEmail" class="form-control" placeholder="Adresse email" required />
-          <label for="inputUsername" v-if="mode == 'create'"></label>
-          <input v-if="mode == 'create'" type="text" v-model="username" id="inputUsername" class="form-control" placeholder="Username" required />
-          <label for="inputPassword"></label>
-          <input type="password" v-model="password" id="inputPassword" class="form-control" placeholder="Password" required />
-        <button v-if="mode == 'create'" @click="Signup" class="btn btn-lg btn-primary btn-block" type="submit">Envoyer</button>
-        <button v-else @click="login" class="btn btn-lg btn-primary btn-block" type="submit">Envoyer</button>
-        <p class="my-3 text-danger">{{ errorMsg }}</p>
+    <img class="mb-4" src="../assets/icon-above-font.png"/>
+    <h1 class="h3 mb-3 font-weight-normal" v-if="mode == 'create'">Créer un compte</h1>
+    <h1 class="h3 mb-3 font-weight-normal" v-else>Connectez-vous</h1> 
+    <p v-if="mode == 'login'">Tu n'as pas encore de compte ? <span @click="switchToCreateAccount()">Clique ici.</span></p>
+    <p v-else>Tu as déjà un compte ? <span @click="switchToLogin()">Clique ici.</span></p> 
+      <label for="inputEmail"></label>
+      <input type="email" v-model="email" id="inputEmail" class="form-control" placeholder="Adresse email" required />
+      <label for="inputUsername" v-if="mode == 'create'"></label>
+      <input v-if="mode == 'create'" type="text" v-model="username" id="inputUsername" class="form-control" placeholder="Username" required />
+      <label for="inputPassword"></label>
+      <input type="password" v-model="password" id="inputPassword" class="form-control" placeholder="Password" required />
+    <button v-if="mode == 'create'" @click="Signup" class="btn btn-lg btn-primary btn-block" type="submit">Envoyer</button>
+    <button v-else @click="login" class="btn btn-lg btn-primary btn-block" type="submit">Envoyer</button>
+    <p class="my-3 text-danger">{{ errorMsg }}</p>
 </form>
 </div>
 </template>

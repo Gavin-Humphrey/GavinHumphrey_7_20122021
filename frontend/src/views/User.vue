@@ -2,14 +2,15 @@
 <div class="link_user">
 <router-link to="/messages"><img src="../assets/home.png"/></router-link>
 </div>
+<div class="user_status">
 <p>User</p>
+</div>
 <div class="user" v-if="myId!=='1'">
 <deleteUser/>
 </div>
 <div class="user" v-if="myId!=='1'">
 <updateUser/>
 </div>
-
 <div class="comment_box" v-for="comment in myComments" v-bind:key="comment">
 <div v-if="comment.userId==myId">
 <div class="UserName_et_date">
@@ -23,7 +24,7 @@
 <button @click="isShow =!isShow" type="button" class="btn btn-outline-primary" id="update_comment">Modifier commentaire</button>
 </div>
 <div v-show="isShow" class="show_btn" >
-<button id="send_update" type="button" class="btn btn-primary" @click="updateMyComment(comment.id)">Envoyer</button>
+<button id="send_update" type="button" class="btn btn-primary" @click="updateMyComment(comment.id)" >Envoyer</button>
 <textarea v-model="content" placeholder="Ecrivez votre nouveau commentaire" required></textarea>
 </div>
 </div>
@@ -72,20 +73,22 @@ export default {
           console.log(error)
       });
   }
-  {
+
+
+{
   axios
-      .get("http://localhost:3000/api/comments",  {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token")
-        }
-      })
-      .then((response) => {
-          console.log(response);
-          this.myComments = response.data
-      })
-      .catch((error) => {
-          console.log(error)
-      })
+    .get("http://localhost:3000/api/comments",  {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token")
+      }
+    })
+    .then((response) => {
+        console.log(response);
+        this.myComments = response.data
+    })
+    .catch((error) => {
+        console.log(error)
+    })
   }
 
 },
@@ -93,46 +96,46 @@ export default {
     document.querySelector('body').setAttribute('style', '');
     document.getElementById('app').setAttribute('style', '');
   },
+
 methods: {
   deleteComments(e) {
     var r = confirm("Êtes-vous sûr de vouloir supprimer ce commentaire ?");
   if (r == true) {
      axios
-      .delete(`http://localhost:3000/api/comments/${e}`,  {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token")
-        }
-      })
-      .then((response) => {
-          console.log(response + "Commentaire supprimé");
-          
-      })
-      .catch((error) => {
-          console.log(error)
-      });
-      location.reload();
+    .delete(`http://localhost:3000/api/comments/${e}`,  {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token")
+      }
+    })
+    .then((response) => {
+        console.log(response + "Commentaire supprimé");
+        
+    })
+    .catch((error) => {
+        console.log(error)
+    });
+    location.reload();
   }
     },
     updateMyComment (e) {
-            axios.put(`http://localhost:3000/api/comments/${e}`, {
-                content:this.content
-            } , {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token")
-        }
-      })
-      .then((response) => {
-          console.log(response);
-      })
-      .catch((error) => {
-          console.log(error)
-      });
-      location.reload();
-        }
+      axios.put(`http://localhost:3000/api/comments/${e}`, {
+        content:this.content
+      } , {
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token")
+    }
+  })
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((error) => {
+        console.log(error)
+    });
+    location.reload();
+      }
 
    }   
 };
-
 
 </script>
 <style scoped>
@@ -141,6 +144,14 @@ img {
 }
 #send_update {
   margin: 10px 30% 10px 30%;
+}
+.btn-primary {
+  border-radius: 10px;
+  border: 1.5px solid;
+  background-color: #7c3838;
+}
+.btn-primary:hover {
+  background-color: #3d0f0f;
 }
 .btn_delete {
   width:25px;
@@ -212,9 +223,13 @@ textarea {
   word-break: break-all;
   color:#7c3838;
 }
-p {
+.user_status {
   display: flex;
   justify-content: center;
+  font-size: 10px;
+  font-style: italic;
+  font-weight: bolder;
+  color: green;
 }
 
 </style>

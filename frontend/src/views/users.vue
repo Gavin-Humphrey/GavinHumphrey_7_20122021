@@ -2,7 +2,9 @@
 <div class="link_user">
 <router-link to="/messages"><img src="../assets/home.png"/></router-link>
 </div>
-<p class="admin">Admin</p>
+<div class="admin">
+<p>Admin</p>
+</div>
 <div id="myUser" v-for="data in Users" v-bind:key="data.id">
 <p>{{ data.username }}</p>
 <div>
@@ -10,7 +12,6 @@
 </div>
 </div>
 </template>
-
 
 <script>
 import axios from "axios";
@@ -21,7 +22,7 @@ export default {
       return {
           Users: [],
           myId: localStorage.getItem("userId"),
-          username:""
+          username:"",
       };
   },
   beforeCreate () {
@@ -115,6 +116,10 @@ button:hover {
 .admin {
    display: flex;
   justify-content: center;
+  font-size: 10px;
+  font-weight: bolder;
+  font-style: italic;
+  color: green;
 }
 
 </style>

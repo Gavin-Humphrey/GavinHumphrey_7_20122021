@@ -75,6 +75,40 @@ exports.findOne = (req, res) => {
     });
 };
 
+//added
+exports.modifyMessage = (req, res) => {
+  var content = req.body.content;
+
+  if (content == null) {
+    return res.status(400).json({ error: 'missing parameters' });
+  }
+
+  if (content.length <= CONTENT_LIMIT) {
+    return res.status(400).json({ error: 'invalid parameters' });
+  }
+  let imageMessage = '';
+  if (req.file) {
+    imageMessage = `${req.protocol}://${req.get('host')}/images/${req.file.filename}`;
+  }
+
+  Message.findOne({
+    where: { id: req.params.id },
+  })
+    .then((message) => {
+      if (res.locals.user === message.userId || res.locals.user === 1) {
+        message
+          .update(req.body)
+          .then(() => res.status(200).json({ message: 'Message updated !' }))
+          .catch((error) => res.status(400).json({ error }));
+      } else {
+        res.status(401).json({ error: 'You do not have the required authorization !' });
+      }
+    })
+    .catch((error) => res.status(400).json({ error: 'No message found' }));
+};
+//stopped
+
+
 exports.deleteOne = (req, res) => {
   Message.findOne({
     where: { id: req.params.id },
