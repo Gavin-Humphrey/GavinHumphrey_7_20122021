@@ -1,6 +1,6 @@
 # GavinHumphrey_7_20122021
 
-Projet de formation de développeur web Openclassrooms. Créer un réseau social, interne, d'entreprise. Dans ce projet, j'ai utilisé :
+Projet de formation de développeur web Openclassrooms. Créer un réseau social d'entreprise. Dans ce projet, j'ai utilisé :
 
 • Mysql
 • VueJs
