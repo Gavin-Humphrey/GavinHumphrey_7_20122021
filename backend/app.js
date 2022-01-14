@@ -15,10 +15,8 @@ app.use((req, res, next) => {
   next();
 });
 
-// parse requests of content-type - application/json
 app.use(express.json());
 
-// simple route
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to Groupomania application.' });
 });

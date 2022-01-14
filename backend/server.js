@@ -1,6 +1,6 @@
 const http = require('http');
 const app = require('./app');
-//importation du fichier de config
+//fichier de config
 const config = require('./config');
 
 console.log(`NODE_ENV=${config.NODE_ENV}`);

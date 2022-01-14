@@ -11,15 +11,13 @@ const MIME_TYPES = {
   'image/png': 'png',
 };
 
-// Objet de configuration de multer
-// Permet l'enregistrement sur le disque
+
 const storage = multer.diskStorage({
-  // Dans quel dossier on enregistre l'image
   destination: (req, file, callback) => {
     console.log(file);
     callback(null, 'images');
   },
-  // le nom de l'image
+
   filename: (req, file, callback) => {
     const name = file.originalname.split(' ').join('_');
     const extension = MIME_TYPES[file.mimetype];
@@ -27,7 +25,4 @@ const storage = multer.diskStorage({
   },
 });
 
-// --------------------- EXPORTATIONS ---------------------- //
-
-// Exportation du middleware complètement configuré
 module.exports = multer({ storage: storage, fileFilter: helpers.imageFilter }).single('imageUrl');
