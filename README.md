@@ -29,6 +29,6 @@ Puis
 npm run serve
 
 Si le navigateur ne s'ouvre pas automatiquement allez à :
-•	http://localhost:8080/
+	http://localhost:8080/
 
 Enfin créer un 1er utilisateur qui sera l'administrateur.
