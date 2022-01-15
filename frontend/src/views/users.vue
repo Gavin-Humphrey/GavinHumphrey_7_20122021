@@ -1,6 +1,6 @@
 <template>
 <div class="link_user">
-<router-link to="/messages"><img src="../assets/home.png"/></router-link>
+<router-link to="/messages"><img alt="home" src="../assets/home.png"/></router-link>
 </div>
 <div class="admin">
 <p>Admin</p>

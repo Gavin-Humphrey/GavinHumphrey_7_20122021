@@ -1,8 +1,8 @@
 <template>
 <div>
 <div class="lien_user">
-<router-link to="users" v-if="myId==='1'"><img src="../assets/users.png"/></router-link>
-<router-link to="User" v-else><img src="../assets/user.png"/></router-link>
+<router-link to="users" v-if="myId==='1'"><img alt="users" src="../assets/users.png"/></router-link>
+<router-link to="User" v-else><img alt="user" src="../assets/user.png"/></router-link>
 </div>
 <div class="create_message">
 <createMessage/>

@@ -1,5 +1,5 @@
 <template>
-<img type="button" class="img_like" src="../assets/like1.svg" @click="likeAMessage"/>
+<img type="button" class="img_like" alt="like1" src="../assets/like1.svg" @click="likeAMessage"/>
 </template>
 <script>
 import axios from "axios";

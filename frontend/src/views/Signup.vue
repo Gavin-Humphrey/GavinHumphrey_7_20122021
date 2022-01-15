@@ -1,7 +1,7 @@
 <template>
 <div class="text-center">
 <form class="form-signup">
-    <img class="mb-4" src="../assets/icon-above-font.png"/>
+    <img class="mb-4" alt="icon-above-font" src="../assets/icon-above-font.png"/>
     <h1 class="h3 mb-3 font-weight-normal" v-if="mode == 'create'">Créer un compte</h1>
     <h1 class="h3 mb-3 font-weight-normal" v-else>Connectez-vous</h1> 
     <p v-if="mode == 'login'">Tu n'as pas encore de compte ? <span @click="switchToCreateAccount()">Clique ici.</span></p>

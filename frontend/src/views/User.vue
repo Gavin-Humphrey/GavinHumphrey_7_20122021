@@ -1,6 +1,6 @@
 <template>
 <div class="link_user">
-<router-link to="/messages"><img src="../assets/home.png"/></router-link>
+<router-link to="/messages"><img alt="home" src="../assets/home.png"/></router-link>
 </div>
 <div class="user_status">
 <p>User</p>
@@ -15,7 +15,7 @@
 <div v-if="comment.userId==myId">
 <div class="UserName_et_date">
 <p>{{comment.user.username}}</p>
-<img src="../assets/delete.png" @click="deleteComments(comment.id)" class="btn_delete"/>
+<img alt="delete" src="../assets/delete.png" @click="deleteComments(comment.id)" class="btn_delete"/>
 </div>
 <div class="le_commentaire">
 <p>{{comment.content}}</p>
